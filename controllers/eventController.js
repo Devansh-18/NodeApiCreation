@@ -29,58 +29,56 @@ export const createEvent = async (req, res) => {
     }
 };
 
-// Gets an event by its unique id
-export const getEventById = async (req, res) => {
+// Get events 
+export const getEvents = async (req, res) => {
     try {
         const database = await db();
 
-        const event = await database
-            .collection("events")
-            .findOne({ _id: new ObjectId(req.params.id) });
+        if (req.query.id) {
+            const event = await database
+                .collection("events")
+                .findOne({ _id: new ObjectId(req.query.id) });
 
-        res.json({
-            success: true,
-            message: "Event fetched successfully",
-            data: event,
+            return res.json({
+                success: true,
+                message: "Event fetched successfully",
+                data: event
+            });
+        }
+
+        if (req.query.type === "latest") {
+            const { limit = 5, page = 1 } = req.query;
+
+            const events = await database
+                .collection("events")
+                .find()
+                .sort({ createdAt: -1 })
+                .skip((page - 1) * Number(limit))
+                .limit(Number(limit))
+                .toArray();
+
+            return res.json({
+                success: true,
+                message: "Latest events fetched successfully",
+                data: events
+            });
+        }
+
+        // If neither condition matches
+        return res.status(400).json({
+            success: false,
+            message: "Invalid query parameters"
         });
     }
     catch (error) {
         res.status(500).json({
             success: false,
-            message: "Failed to fetch event",
+            message: "Failed to fetch events",
             error: error.message
         });
     }
 };
 
-// Gets an event by its recency & paginate results by page number and limit of events per page
-export const getLatestEvents = async (req, res) => {
-    try {
-        const { limit = 5, page = 1 } = req.query;
-        const database = await db();
-
-        const events = await database
-            .collection("events")
-            .find()
-            .sort({ createdAt: -1 })
-            .skip((page - 1) * Number(limit))
-            .limit(Number(limit))
-            .toArray();
-
-        res.json({
-            success: true,
-            message: "Latest events fetched successfully",
-            data: events,
-        });
-    }
-    catch (error) {
-        res.status(500).json({
-            success: false,
-            message: "Failed to fetch latest events",
-            error: error.message
-        });
-    }
-};
 
 // update 
 export const updateEvent = async (req, res) => {
@@ -97,7 +95,8 @@ export const updateEvent = async (req, res) => {
             message: "Event updated",
             data: { message: "Event updated" },
         });
-    } catch (error) {
+    }
+    catch (error) {
         res.status(500).json({
             success: false,
             message: "Failed to update event",
@@ -120,7 +119,8 @@ export const deleteEvent = async (req, res) => {
             message: "Event deleted",
             data: { message: "Event deleted" },
         });
-    } catch (error) {
+    }
+    catch (error) {
         res.status(500).json({
             success: false,
             message: "Failed to delete event",
