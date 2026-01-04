@@ -1,0 +1,365 @@
+{
+  "info": {
+    "_postman_id": "f4e327a7-94b3-4117-846f-5423fa00c7ef",
+    "name": "DT API Testing",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "getLatestEvents",
+      "id": "e8c7f2d0-db55-4ea9-b4e8-13ad1c362e1b",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BaseUrl}}/events?type=latest&limit=5&page=1",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "events"
+          ],
+          "query": [
+            {
+              "key": "type",
+              "value": "latest"
+            },
+            {
+              "key": "limit",
+              "value": "5"
+            },
+            {
+              "key": "page",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "36e46d08-b427-466c-8038-ec20bda2b021",
+          "name": "getEvent",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "/events?type=latest&limit=5&page=1",
+              "path": [
+                "events"
+              ],
+              "query": [
+                {
+                  "key": "type",
+                  "value": "latest"
+                },
+                {
+                  "key": "limit",
+                  "value": "5"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "2264"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"8d8-rt9Hm4ZiIUoRHaa0qVyfjxvKTFs\""
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 04 Jan 2026 18:54:22 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"Latest events fetched successfully\",\n    \"data\": [\n        {\n            \"_id\": \"695a96d6f22bcbce68d39768\",\n            \"name\": \" Tech & Culture Fest\",\n            \"tagline\": \" Where innovation meets creativity\",\n            \"schedule\": \" 2026-03-22 04:00 PM – 9:00 PM\",\n            \"description\": \" A cultural fest combined with technology exhibitions and performances.\",\n            \"moderator\": \" Cultural Committee\",\n            \"category\": \" Community\",\n            \"sub_category\": \" Cultural\",\n            \"rigor_rank\": \" 2\",\n            \"files\": \"uploads\\\\1767544533999-download5.jfif\",\n            \"createdAt\": \"2026-01-04T16:35:34.007Z\"\n        },\n        {\n            \"_id\": \"695a9662f22bcbce68d39767\",\n            \"name\": \" 24-Hour Innovation Hackathon\",\n            \"tagline\": \" Code. Build. Innovate.\",\n            \"schedule\": \" 2026-04-12 10:00 AM – 10:00 AM\",\n            \"description\": \" A 24-hour hackathon where teams build innovative tech solutions.\",\n            \"moderator\": \" Aman Gupta\",\n            \"category\": \" Technology\",\n            \"sub_category\": \" Hackathon\",\n            \"rigor_rank\": \" 5\",\n            \"files\": \"uploads\\\\1767544418560-download4.jfif\",\n            \"createdAt\": \"2026-01-04T16:33:38.582Z\"\n        },\n        {\n            \"_id\": \"695a95c8f22bcbce68d39766\",\n            \"name\": \" Research Seminar\",\n            \"tagline\": \" From problem statement to completion\",\n            \"schedule\": \" 2026-02-18 04:00 PM – 6:00 PM\",\n            \"description\": \" Seminar focused on academic research, paper writing, and publication strategies.\",\n            \"moderator\": \" Prof. J. P. Singhania\",\n            \"category\": \" Education\",\n            \"sub_category\": \" Research\",\n            \"rigor_rank\": \" 4\",\n            \"files\": \"uploads\\\\1767552458210-download6.jfif\",\n            \"createdAt\": \"2026-01-04T16:31:04.669Z\"\n        },\n        {\n            \"_id\": \"695a9556f22bcbce68d39765\",\n            \"name\": \" Future Leaders Conclave\",\n            \"tagline\": \" Leadership beyond titles\",\n            \"schedule\": \" 2026-01-28 11:00 AM – 3:00 PM\",\n            \"description\": \" A leadership conclave focusing on communication, decision-making, and strategic thinking.\",\n            \"moderator\": \" Neha Kapoor\",\n            \"category\": \" Management\",\n            \"sub_category\": \" Leadership\",\n            \"rigor_rank\": \" 3\",\n            \"files\": \"uploads\\\\1767544150135-download2.jfif\",\n            \"createdAt\": \"2026-01-04T16:29:10.142Z\"\n        },\n        {\n            \"_id\": \"695a92e5f22bcbce68d39763\",\n            \"name\": \" AI Leadership Summit\",\n            \"tagline\": \" Shaping the future with AI\",\n            \"schedule\": \" 2026-02-10 10:00 AM – 4:00 PM\",\n            \"description\": \" A high-impact leadership event focused on AI adoption and strategy.\",\n            \"moderator\": \" Dr. Amit Verma\",\n            \"category\": \" Technology\",\n            \"sub_category\": \" Artificial Intelligence\",\n            \"rigor_rank\": \" 4\",\n            \"files\": \"uploads\\\\1767543525171-download.jfif\",\n            \"createdAt\": \"2026-01-04T16:18:45.288Z\"\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "createEvent",
+      "id": "b2f076e4-50a7-4ba0-825f-55771acc3190",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "name",
+              "value": " AI Leadership Summit",
+              "type": "text"
+            },
+            {
+              "key": "tagline",
+              "value": " Shaping the future with AI",
+              "type": "text"
+            },
+            {
+              "key": "schedule",
+              "value": " 2026-02-10 10:00 AM – 4:00 PM",
+              "type": "text"
+            },
+            {
+              "key": "description",
+              "value": " A high-impact leadership event focused on AI adoption and strategy.",
+              "type": "text"
+            },
+            {
+              "key": "moderator",
+              "value": " Dr. Amit Verma",
+              "type": "text"
+            },
+            {
+              "key": "category",
+              "value": " Technology",
+              "type": "text"
+            },
+            {
+              "key": "sub_category",
+              "value": " Artificial Intelligence",
+              "type": "text"
+            },
+            {
+              "key": "rigor_rank",
+              "value": " 4",
+              "type": "text"
+            },
+            {
+              "key": "files[image]",
+              "type": "file",
+              "src": "/E:/Downloads/download.jfif"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{BaseUrl}}/events",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "events"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getEventById",
+      "id": "8d0064c5-d449-4789-a4e4-370debc45fa1",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "updateEvent",
+      "id": "316f789c-f686-49f0-a35d-474123b867aa",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "name",
+              "value": " Research Seminar",
+              "type": "text"
+            },
+            {
+              "key": "tagline",
+              "value": " From problem statement to completion",
+              "type": "text"
+            },
+            {
+              "key": "schedule",
+              "value": " 2026-02-18 04:00 PM – 6:00 PM",
+              "type": "text"
+            },
+            {
+              "key": "description",
+              "value": " Seminar focused on academic research, paper writing, and publication strategies.",
+              "type": "text"
+            },
+            {
+              "key": "moderator",
+              "value": " Prof. J. P. Singhania",
+              "type": "text"
+            },
+            {
+              "key": "category",
+              "value": " Education",
+              "type": "text"
+            },
+            {
+              "key": "sub_category",
+              "value": " Research",
+              "type": "text"
+            },
+            {
+              "key": "rigor_rank",
+              "value": " 4",
+              "type": "text"
+            },
+            {
+              "key": "files[image]",
+              "type": "file",
+              "src": "/E:/Downloads/download6.jfif"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{BaseUrl}}/events/:id",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "events",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "695a95c8f22bcbce68d39766"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteEvent",
+      "id": "823a3cda-f624-45e4-8c0f-4ccf6849eb55",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "name",
+              "value": " Research Seminar",
+              "type": "text"
+            },
+            {
+              "key": "tagline",
+              "value": " From problem statement to completion",
+              "type": "text"
+            },
+            {
+              "key": "schedule",
+              "value": " 2026-02-18 04:00 PM – 6:00 PM",
+              "type": "text"
+            },
+            {
+              "key": "description",
+              "value": " Seminar focused on academic research, paper writing, and publication strategies.",
+              "type": "text"
+            },
+            {
+              "key": "moderator",
+              "value": " Prof. J. P. Singhania",
+              "type": "text"
+            },
+            {
+              "key": "category",
+              "value": " Education",
+              "type": "text"
+            },
+            {
+              "key": "sub_category",
+              "value": " Research",
+              "type": "text"
+            },
+            {
+              "key": "rigor_rank",
+              "value": " 4",
+              "type": "text"
+            },
+            {
+              "key": "files[image]",
+              "type": "file",
+              "src": "/E:/Downloads/download6.jfif"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{BaseUrl}}/events/:id",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "events",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "695a95c8f22bcbce68d39766"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "9f971454-09bc-41ac-b2cd-aab8227fdbb8",
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "fe4bdbf5-fd42-4edc-9422-380a1272f091",
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "id": "213ef181-166e-4cf9-a5a7-ce909d9715f3",
+      "key": "BaseUrl",
+      "value": ""
+    }
+  ]
+}
