@@ -28,12 +28,15 @@ http://localhost:3000
 
 All APIs for **Task 1 (Backend Implementation)** were tested using Postman.
 
+The postman testing folder is uploaded to the repository itself.
+Don't rely on this collection link, it may not work.
+Check from the repo postman folder itself. 
+
 👉 **Postman Collection Link:**
 [https://www.postman.com/My Workplace/DT_API_Testing](https://web.postman.co/workspace/88b1f8be-9cbf-4dd9-889e-dec20cd5ac7e/collection/39950367-f4e327a7-94b3-4117-846f-5423fa00c7ef?action=share&source=copy-link&creator=39950367)
 
 You can import this collection into Postman to verify and test all APIs directly.
 
-The postman testing folder is also uploaded to the repository itself.
 
 ---
 
